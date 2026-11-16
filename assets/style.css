@@ -239,6 +239,12 @@ a:hover { text-decoration: underline; }
 .notice p { color: var(--ink-soft); }
 .facts { margin: 10px 0 0; padding-left: 22px; color: var(--ink-soft); }
 .facts li { margin: 6px 0; }
+.tac-entry-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.tac-entry-links a {
+  font-size: 13px; padding: 5px 13px; border-radius: 999px;
+  background: #fff; border: 1px solid var(--line); color: var(--pink-deep); text-decoration: none;
+}
+.tac-entry-links a:hover { border-color: var(--pink); background: var(--pink-mist); }
 .about h1 { margin-top: 4px; font-size: 30px; color: var(--pink-deep); }
 .about h2 { font-size: 18px; border-left: 5px solid var(--pink); padding-left: 10px; }
 .about p, .about li { color: var(--ink-soft); }
