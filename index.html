@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>首页 - 足球百科</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+</head>
+<body class="page-home">
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="index.html"><span class="logo-ball">⚽</span><span class="logo-text">足球百科</span><span class="logo-sub">Footballpedia</span></a>
+    <form class="search" action="all.html" method="get" onsubmit="return this.q.value.trim()!==''">
+      <input name="q" placeholder="搜索球员……" value="" autocomplete="off">
+      <button type="submit">搜索</button>
+    </form>
+    <nav class="head-nav">
+      <a href="index.html" class="on">首页</a>
+      <a href="all.html" >全部球员</a>
+      <a href="about.html" >关于本站</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>足球百科</h1>
+      <p class="hero-sub">绿茵场上的每一位球员，都值得被记住。</p>
+      <p class="hero-stats"><b>59</b> 位球员 · <b>59</b> 张真实照片 · 数据来自维基百科</p>
+      <a class="hero-btn" href="all.html">进入全部球员 →</a>
+    </div>
+    <div class="hero-deco">⚽</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>球员一览</h2>
+      <div class="chips"><button class="chip on" data-group="">全部</button><button class="chip" data-group="FW">前锋</button><button class="chip" data-group="MF">中场</button><button class="chip" data-group="DF">后卫</button><button class="chip" data-group="GK">门将</button></div>
+    </div>
+    <input id="filter" class="filter-input" placeholder="输入名字 / 别名 / 国家筛选……">
+    <div id="grid" class="grid">
+<a class="pcard" href="players/cr7.html" data-search="c罗 总裁 cr7 小小罗 c朗 克里斯蒂亚诺·罗纳尔多 葡萄牙 前锋 利雅得胜利" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/cr7.jpg" alt="C罗" loading="lazy"><span class="pcard-flag">🇵🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">C罗</b>
+        <span class="pcard-meta">葡萄牙 · 前锋</span>
+        <span class="pcard-line">现效力 利雅得胜利</span>
+      </div>
+    </a>
+<a class="pcard" href="players/messi.html" data-search="梅西 利奥（leo） goat 利安奴·美斯 里奥·梅西 阿根廷、西班牙、意大利 翼锋、进攻中场、伪九号 国际迈阿密" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/messi.jpg" alt="梅西" loading="lazy"><span class="pcard-flag">🇦🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">梅西</b>
+        <span class="pcard-meta">阿根廷 · 翼锋、进攻中场、伪九号</span>
+        <span class="pcard-line">现效力 国际迈阿密</span>
+      </div>
+    </a>
+<a class="pcard" href="players/neymar.html" data-search="内马尔 内少 马儿 奈伊马尔·达席尔瓦 巴西 左边锋、进攻中场 桑托斯" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/neymar.jpg" alt="内马尔" loading="lazy"><span class="pcard-flag">🇧🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">内马尔</b>
+        <span class="pcard-meta">巴西 · 左边锋、进攻中场</span>
+        <span class="pcard-line">现效力 桑托斯</span>
+      </div>
+    </a>
+<a class="pcard" href="players/emiliano-martinez.html" data-search="大马丁 迪布（dibu） 阿根廷 守门员 切尔西" data-group="GK">
+      <div class="pcard-photo"><img src="assets/img/emiliano-martinez.jpg" alt="大马丁" loading="lazy"><span class="pcard-flag">🇦🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">大马丁</b>
+        <span class="pcard-meta">阿根廷 · 守门员</span>
+        <span class="pcard-line">现效力 切尔西</span>
+      </div>
+    </a>
+<a class="pcard" href="players/haaland.html" data-search="哈兰德 魔人普乌 苏斯克查2.0 埃林·布劳特·赫兰 挪威 前锋 曼城" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/haaland.jpg" alt="哈兰德" loading="lazy"><span class="pcard-flag">🇳🇴</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">哈兰德</b>
+        <span class="pcard-meta">挪威 · 前锋</span>
+        <span class="pcard-line">现效力 曼城</span>
+      </div>
+    </a>
+<a class="pcard" href="players/yamal.html" data-search="亚马尔 拉明 lamine 西班牙、赤道几内亚、摩洛哥 翼锋 巴塞罗那" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/yamal.jpg" alt="亚马尔" loading="lazy"><span class="pcard-flag">🇪🇸</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">亚马尔</b>
+        <span class="pcard-meta">西班牙 · 翼锋</span>
+        <span class="pcard-line">现效力 巴塞罗那</span>
+      </div>
+    </a>
+<a class="pcard" href="players/bellingham.html" data-search="贝林厄姆 新齐达内 新大英帝王 beli 英格兰 中场 皇家马德里" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/bellingham.jpg" alt="贝林厄姆" loading="lazy"><span class="pcard-flag">🏴</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">贝林厄姆</b>
+        <span class="pcard-meta">英格兰 · 中场</span>
+        <span class="pcard-line">现效力 皇家马德里</span>
+      </div>
+    </a>
+<a class="pcard" href="players/vinicius.html" data-search="维尼修斯 新尼马 vini 云尼斯奥斯·祖利亚 巴西、西班牙 翼锋、前锋 皇家马德里" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/vinicius.jpg" alt="维尼修斯" loading="lazy"><span class="pcard-flag">🇧🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">维尼修斯</b>
+        <span class="pcard-meta">巴西 · 翼锋、前锋</span>
+        <span class="pcard-line">现效力 皇家马德里</span>
+      </div>
+    </a>
+<a class="pcard" href="players/salah.html" data-search="萨拉赫 埃及梅西 法老 法老王 埃及 翼锋、前锋 特拉布宗" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/salah.jpg" alt="萨拉赫" loading="lazy"><span class="pcard-flag">🇪🇬</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">萨拉赫</b>
+        <span class="pcard-meta">埃及 · 翼锋、前锋</span>
+        <span class="pcard-line">现效力 特拉布宗</span>
+      </div>
+    </a>
+<a class="pcard" href="players/kane.html" data-search="哈里·凯恩 飓风 英国 前锋 拜仁慕尼黑" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/kane.jpg" alt="哈里·凯恩" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">哈里·凯恩</b>
+        <span class="pcard-meta">英国 · 前锋</span>
+        <span class="pcard-line">现效力 拜仁慕尼黑</span>
+      </div>
+    </a>
+<a class="pcard" href="players/de-bruyne.html" data-search="德布劳内 kdb 丁丁 比利时 中场 那不勒斯" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/de-bruyne.jpg" alt="德布劳内" loading="lazy"><span class="pcard-flag">🇧🇪</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">德布劳内</b>
+        <span class="pcard-meta">比利时 · 中场</span>
+        <span class="pcard-line">现效力 那不勒斯</span>
+      </div>
+    </a>
+<a class="pcard" href="players/modric.html" data-search="莫德里奇 魔笛 中场艺术家 巴尔干克鲁伊夫 克罗地亚 中场、攻击型中场 ac米兰" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/modric.jpg" alt="莫德里奇" loading="lazy"><span class="pcard-flag">🇭🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">莫德里奇</b>
+        <span class="pcard-meta">克罗地亚 · 中场、攻击型中场</span>
+        <span class="pcard-line">现效力 AC米兰</span>
+      </div>
+    </a>
+<a class="pcard" href="players/james-rodriguez.html" data-search="j罗 占士·洛迪古斯 哥伦比亚、西班牙 进攻中场、中场 国民竞技" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/james-rodriguez.jpg" alt="J罗" loading="lazy"><span class="pcard-flag">🇨🇴</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">J罗</b>
+        <span class="pcard-meta">哥伦比亚 · 进攻中场、中场</span>
+        <span class="pcard-line">现效力 国民竞技</span>
+      </div>
+    </a>
+<a class="pcard" href="players/dembele.html" data-search="登贝莱  法国 前锋/翼锋 巴黎圣日耳曼" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/dembele.jpg" alt="登贝莱" loading="lazy"><span class="pcard-flag">🇫🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">登贝莱</b>
+        <span class="pcard-meta">法国 · 前锋/翼锋</span>
+        <span class="pcard-line">现效力 巴黎圣日耳曼</span>
+      </div>
+    </a>
+<a class="pcard" href="players/pedri.html" data-search="佩德里  西班牙 进攻中场 巴塞罗那" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/pedri.jpg" alt="佩德里" loading="lazy"><span class="pcard-flag">🇪🇸</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">佩德里</b>
+        <span class="pcard-meta">西班牙 · 进攻中场</span>
+        <span class="pcard-line">现效力 巴塞罗那</span>
+      </div>
+    </a>
+<a class="pcard" href="players/olise.html" data-search="奥利塞 米高·奥利塞 英国、法国 进攻中场、翼锋 拜仁慕尼黑" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/olise.jpg" alt="奥利塞" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">奥利塞</b>
+        <span class="pcard-meta">英国 · 进攻中场、翼锋</span>
+        <span class="pcard-line">现效力 拜仁慕尼黑</span>
+      </div>
+    </a>
+<a class="pcard" href="players/vitinha.html" data-search="维蒂尼亚 域天拿 葡萄牙 中场 巴黎圣日耳曼" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/vitinha.jpg" alt="维蒂尼亚" loading="lazy"><span class="pcard-flag">🇵🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">维蒂尼亚</b>
+        <span class="pcard-meta">葡萄牙 · 中场</span>
+        <span class="pcard-line">现效力 巴黎圣日耳曼</span>
+      </div>
+    </a>
+<a class="pcard" href="players/joao-neves.html" data-search="若昂·内维斯 祖奥·内维斯 葡萄牙 中场 巴黎圣日耳曼" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/joao-neves.jpg" alt="若昂·内维斯" loading="lazy"><span class="pcard-flag">🇵🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">若昂·内维斯</b>
+        <span class="pcard-meta">葡萄牙 · 中场</span>
+        <span class="pcard-line">现效力 巴黎圣日耳曼</span>
+      </div>
+    </a>
+<a class="pcard" href="players/kvaratskhelia.html" data-search="克瓦拉茨赫利亚 克瓦拉多纳（kvaradona） k77 格鲁吉亚 边锋 巴黎圣日耳曼" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/kvaratskhelia.png" alt="克瓦拉茨赫利亚" loading="lazy"><span class="pcard-flag">🇬🇪</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">克瓦拉茨赫利亚</b>
+        <span class="pcard-meta">格鲁吉亚 · 边锋</span>
+        <span class="pcard-line">现效力 巴黎圣日耳曼</span>
+      </div>
+    </a>
+<a class="pcard" href="players/rice.html" data-search="赖斯 大米 迪格兰·赖斯 英国 后腰 阿森纳" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/rice.jpg" alt="赖斯" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">赖斯</b>
+        <span class="pcard-meta">英国 · 后腰</span>
+        <span class="pcard-line">现效力 阿森纳</span>
+      </div>
+    </a>
+<a class="pcard" href="players/saka.html" data-search="萨卡 布卡约·沙卡 英国 右边锋 阿森纳" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/saka.jpg" alt="萨卡" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">萨卡</b>
+        <span class="pcard-meta">英国 · 右边锋</span>
+        <span class="pcard-line">现效力 阿森纳</span>
+      </div>
+    </a>
+<a class="pcard" href="players/palmer.html" data-search="帕尔默 泡沫 英国 进攻中场、边锋 切尔西" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/palmer.jpg" alt="帕尔默" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">帕尔默</b>
+        <span class="pcard-meta">英国 · 进攻中场、边锋</span>
+        <span class="pcard-line">现效力 切尔西</span>
+      </div>
+    </a>
+<a class="pcard" href="players/wirtz.html" data-search="维尔茨 土豆 德国 前腰 利物浦" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/wirtz.jpg" alt="维尔茨" loading="lazy"><span class="pcard-flag">🇩🇪</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">维尔茨</b>
+        <span class="pcard-meta">德国 · 前腰</span>
+        <span class="pcard-line">现效力 利物浦</span>
+      </div>
+    </a>
+<a class="pcard" href="players/julian-alvarez.html" data-search="阿尔瓦雷斯 小蜘蛛 阿根廷、意大利 前锋 马德里竞技" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/julian-alvarez.jpg" alt="阿尔瓦雷斯" loading="lazy"><span class="pcard-flag">🇦🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">阿尔瓦雷斯</b>
+        <span class="pcard-meta">阿根廷 · 前锋</span>
+        <span class="pcard-line">现效力 马德里竞技</span>
+      </div>
+    </a>
+<a class="pcard" href="players/lautaro.html" data-search="劳塔罗·马丁内斯 拿达路·马天尼斯 阿根廷 前锋 国际米兰" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/lautaro.jpg" alt="劳塔罗·马丁内斯" loading="lazy"><span class="pcard-flag">🇦🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">劳塔罗·马丁内斯</b>
+        <span class="pcard-meta">阿根廷 · 前锋</span>
+        <span class="pcard-line">现效力 国际米兰</span>
+      </div>
+    </a>
+<a class="pcard" href="players/hakimi.html" data-search="阿什拉夫  西班牙、摩洛哥 右闸、左闸、右中场 巴黎圣日耳曼" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/hakimi.jpg" alt="阿什拉夫" loading="lazy"><span class="pcard-flag">🇪🇸</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">阿什拉夫</b>
+        <span class="pcard-meta">西班牙 · 右闸、左闸、右中场</span>
+        <span class="pcard-line">现效力 巴黎圣日耳曼</span>
+      </div>
+    </a>
+<a class="pcard" href="players/donnarumma.html" data-search="多纳鲁马 新保方 钱多多 意大利 守门员 曼城" data-group="GK">
+      <div class="pcard-photo"><img src="assets/img/donnarumma.png" alt="多纳鲁马" loading="lazy"><span class="pcard-flag">🇮🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">多纳鲁马</b>
+        <span class="pcard-meta">意大利 · 守门员</span>
+        <span class="pcard-line">现效力 曼城</span>
+      </div>
+    </a>
+<a class="pcard" href="players/raphinha.html" data-search="拉菲尼亚 拉菲 拉芬拿 巴西 边锋 巴塞罗那" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/raphinha.jpg" alt="拉菲尼亚" loading="lazy"><span class="pcard-flag">🇧🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">拉菲尼亚</b>
+        <span class="pcard-meta">巴西 · 边锋</span>
+        <span class="pcard-line">现效力 巴塞罗那</span>
+      </div>
+    </a>
+<a class="pcard" href="players/osimhen.html" data-search="奥斯梅恩 维克托·詹姆斯·奥西门 尼日利亚 前锋 加拉塔萨雷" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/osimhen.jpg" alt="奥斯梅恩" loading="lazy"><span class="pcard-flag">🇳🇬</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">奥斯梅恩</b>
+        <span class="pcard-meta">尼日利亚 · 前锋</span>
+        <span class="pcard-line">现效力 加拉塔萨雷</span>
+      </div>
+    </a>
+<a class="pcard" href="players/son.html" data-search="孙兴慜 韩国盖德·穆勒 亚洲一哥 大韩民国 翼锋、前锋 洛杉矶fc" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/son.jpg" alt="孙兴慜" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">孙兴慜</b>
+        <span class="pcard-meta">大韩民国 · 翼锋、前锋</span>
+        <span class="pcard-line">现效力 洛杉矶FC</span>
+      </div>
+    </a>
+<a class="pcard" href="players/cubarsi.html" data-search="库巴西  西班牙 中后卫 巴塞罗那" data-group="DF">
+      <div class="pcard-photo"><img src="assets/img/cubarsi.jpg" alt="库巴西" loading="lazy"><span class="pcard-flag">🇪🇸</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">库巴西</b>
+        <span class="pcard-meta">西班牙 · 中后卫</span>
+        <span class="pcard-line">现效力 巴塞罗那</span>
+      </div>
+    </a>
+<a class="pcard" href="players/isak.html" data-search="伊萨克  瑞典 前锋 利物浦" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/isak.jpg" alt="伊萨克" loading="lazy"><span class="pcard-flag">🇸🇪</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">伊萨克</b>
+        <span class="pcard-meta">瑞典 · 前锋</span>
+        <span class="pcard-line">现效力 利物浦</span>
+      </div>
+    </a>
+<a class="pcard" href="players/tonali.html" data-search="托纳利  意大利 后腰、中前卫 热刺" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/tonali.jpg" alt="托纳利" loading="lazy"><span class="pcard-flag">🇮🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">托纳利</b>
+        <span class="pcard-meta">意大利 · 后腰、中前卫</span>
+        <span class="pcard-line">现效力 热刺</span>
+      </div>
+    </a>
+<a class="pcard" href="players/enzo.html" data-search="恩佐·费尔南德斯 安素·费南迪斯 阿根廷 中场 曼城" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/enzo.jpg" alt="恩佐·费尔南德斯" loading="lazy"><span class="pcard-flag">🇦🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">恩佐·费尔南德斯</b>
+        <span class="pcard-meta">阿根廷 · 中场</span>
+        <span class="pcard-line">现效力 曼城</span>
+      </div>
+    </a>
+<a class="pcard" href="players/caicedo.html" data-search="凯塞多 摩西·凯塞多 凯爹 厄瓜多尔 中场 切尔西" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/caicedo.jpg" alt="凯塞多" loading="lazy"><span class="pcard-flag">🇪🇨</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">凯塞多</b>
+        <span class="pcard-meta">厄瓜多尔 · 中场</span>
+        <span class="pcard-line">现效力 切尔西</span>
+      </div>
+    </a>
+<a class="pcard" href="players/saliba.html" data-search="萨利巴  法国 中坚 阿森纳" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/saliba.jpg" alt="萨利巴" loading="lazy"><span class="pcard-flag">🇫🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">萨利巴</b>
+        <span class="pcard-meta">法国 · 中坚</span>
+        <span class="pcard-line">现效力 阿森纳</span>
+      </div>
+    </a>
+<a class="pcard" href="players/szoboszlai.html" data-search="索博斯洛伊 索博（szobo） 匈牙利 中场 利物浦" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/szoboszlai.jpg" alt="索博斯洛伊" loading="lazy"><span class="pcard-flag">🇭🇺</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">索博斯洛伊</b>
+        <span class="pcard-meta">匈牙利 · 中场</span>
+        <span class="pcard-line">现效力 利物浦</span>
+      </div>
+    </a>
+<a class="pcard" href="players/estevao.html" data-search="埃斯特旺 梅西尼奥 messinho 小梅西 巴西 边锋 切尔西" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/estevao.jpg" alt="埃斯特旺" loading="lazy"><span class="pcard-flag">🇧🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">埃斯特旺</b>
+        <span class="pcard-meta">巴西 · 边锋</span>
+        <span class="pcard-line">现效力 切尔西</span>
+      </div>
+    </a>
+<a class="pcard" href="players/vozinha.html" data-search="沃齐尼亚  佛得角 守门员 科洛科洛" data-group="GK">
+      <div class="pcard-photo"><img src="assets/img/vozinha.jpg" alt="沃齐尼亚" loading="lazy"><span class="pcard-flag">🇨🇻</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">沃齐尼亚</b>
+        <span class="pcard-meta">佛得角 · 守门员</span>
+        <span class="pcard-line">现效力 科洛科洛</span>
+      </div>
+    </a>
+<a class="pcard" href="players/cherki.html" data-search="谢尔基 拉扬·谢尔基 法国 进攻中场、左边锋 曼城" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/cherki.jpg" alt="谢尔基" loading="lazy"><span class="pcard-flag">🇫🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">谢尔基</b>
+        <span class="pcard-meta">法国 · 进攻中场、左边锋</span>
+        <span class="pcard-line">现效力 曼城</span>
+      </div>
+    </a>
+<a class="pcard" href="players/valverde.html" data-search="巴尔韦德 fede v8 猎鹰（halcón） 乌拉圭 中场 皇家马德里" data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/valverde.jpg" alt="巴尔韦德" loading="lazy"><span class="pcard-flag">🇺🇾</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">巴尔韦德</b>
+        <span class="pcard-meta">乌拉圭 · 中场</span>
+        <span class="pcard-line">现效力 皇家马德里</span>
+      </div>
+    </a>
+<a class="pcard" href="players/wei-shihao.html" data-search="韦世豪 南博赛文 中华人民共和国 左边锋 成都蓉城" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/wei-shihao.jpg" alt="韦世豪" loading="lazy"><span class="pcard-flag">🇨🇳</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">韦世豪</b>
+        <span class="pcard-meta">中华人民共和国 · 左边锋</span>
+        <span class="pcard-line">现效力 成都蓉城</span>
+      </div>
+    </a>
+<a class="pcard" href="players/wu-lei.html" data-search="武磊 武球王 核武7 中华人民共和国 翼锋、前锋 上海海港" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/wu-lei.jpg" alt="武磊" loading="lazy"><span class="pcard-flag">🇨🇳</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">武磊</b>
+        <span class="pcard-meta">中华人民共和国 · 翼锋、前锋</span>
+        <span class="pcard-line">现效力 上海海港</span>
+      </div>
+    </a>
+<a class="pcard" href="players/courtois.html" data-search="库尔图瓦 tibo 裤袜 章鱼 长颈鹿 比利时 守门员 皇家马德里" data-group="GK">
+      <div class="pcard-photo"><img src="assets/img/courtois.jpg" alt="库尔图瓦" loading="lazy"><span class="pcard-flag">🇧🇪</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">库尔图瓦</b>
+        <span class="pcard-meta">比利时 · 守门员</span>
+        <span class="pcard-line">现效力 皇家马德里</span>
+      </div>
+    </a>
+<a class="pcard" href="players/lukaku.html" data-search="卢卡库 小魔兽 渣古 卢员外 比利时 中锋 费内巴切" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/lukaku.jpg" alt="卢卡库" loading="lazy"><span class="pcard-flag">🇧🇪</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">卢卡库</b>
+        <span class="pcard-meta">比利时 · 中锋</span>
+        <span class="pcard-line">现效力 费内巴切</span>
+      </div>
+    </a>
+<a class="pcard" href="players/balotelli.html" data-search="巴洛特利 巴神 超级马里奥 意大利、加纳 前锋 伊蒂法克（阿联酋）" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/balotelli.jpg" alt="巴洛特利" loading="lazy"><span class="pcard-flag">🇮🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">巴洛特利</b>
+        <span class="pcard-meta">意大利 · 前锋</span>
+        <span class="pcard-line">现效力 伊蒂法克（阿联酋）</span>
+      </div>
+    </a>
+<a class="pcard" href="players/benzema.html" data-search="本泽马 奔马 笨马 本泽喵 背锅侠 锅锋 法国、阿尔及利亚 前锋 利雅得新月" data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/benzema.jpg" alt="本泽马" loading="lazy"><span class="pcard-flag">🇫🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">本泽马</b>
+        <span class="pcard-meta">法国 · 前锋</span>
+        <span class="pcard-line">现效力 利雅得新月</span>
+      </div>
+    </a>
+<a class="pcard" href="players/kaka.html" data-search="卡卡 圣西罗王子 米兰王子 上帝之子 巴西、意大利 进攻中场 " data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/kaka.png" alt="卡卡" loading="lazy"><span class="pcard-flag">🇧🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">卡卡</b>
+        <span class="pcard-meta">巴西 · 进攻中场</span>
+        <span class="pcard-line">已退役 · 巴西的足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/beckham.html" data-search="贝克汉姆 碧咸 小贝 英国 右中场 " data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/beckham.jpg" alt="贝克汉姆" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">贝克汉姆</b>
+        <span class="pcard-meta">英国 · 右中场</span>
+        <span class="pcard-line">已退役 · 英国足球运动员（David Beckham）</span>
+      </div>
+    </a>
+<a class="pcard" href="players/shevchenko.html" data-search="舍甫琴科 舍瓦 核弹头 白罗纳尔多 乌克兰 前锋 " data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/shevchenko.jpg" alt="舍甫琴科" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">舍甫琴科</b>
+        <span class="pcard-meta">乌克兰 · 前锋</span>
+        <span class="pcard-line">已退役 · 乌克兰足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/nesta.html" data-search="内斯塔 优雅卫士 尼斯达 罗马君王 意大利 中后卫 " data-group="DF">
+      <div class="pcard-photo"><img src="assets/img/nesta.jpg" alt="内斯塔" loading="lazy"><span class="pcard-flag">🇮🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">内斯塔</b>
+        <span class="pcard-meta">意大利 · 中后卫</span>
+        <span class="pcard-line">已退役 · </span>
+      </div>
+    </a>
+<a class="pcard" href="players/maldini.html" data-search="马尔蒂尼 米兰旗帜 马队长 意大利 左后卫、中后卫 " data-group="DF">
+      <div class="pcard-photo"><img src="assets/img/maldini.jpg" alt="马尔蒂尼" loading="lazy"><span class="pcard-flag">🇮🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">马尔蒂尼</b>
+        <span class="pcard-meta">意大利 · 左后卫、中后卫</span>
+        <span class="pcard-line">已退役 · 意大利足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/raul.html" data-search="劳尔 指环王 金童 班拿贝王子 西班牙 前锋 " data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/raul.jpg" alt="劳尔" loading="lazy"><span class="pcard-flag">🇪🇸</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">劳尔</b>
+        <span class="pcard-meta">西班牙 · 前锋</span>
+        <span class="pcard-line">已退役 · 西班牙足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/robben.html" data-search="罗本 洛宾 荷兰王国 翼锋、前锋 " data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/robben.jpg" alt="罗本" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">罗本</b>
+        <span class="pcard-meta">荷兰王国 · 翼锋、前锋</span>
+        <span class="pcard-line">已退役 · 荷兰男子足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/ribery.html" data-search="里贝里 刀疤战士 刀疤侠 拜仁国王 安联国王 法国 左翼 " data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/ribery.jpg" alt="里贝里" loading="lazy"><span class="pcard-flag">🇫🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">里贝里</b>
+        <span class="pcard-meta">法国 · 左翼</span>
+        <span class="pcard-line">已退役 · 法国足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/giggs.html" data-search="吉格斯 威尔斯巫师 王老吉 英国 左翼、进攻中场、正中场、翼锋 " data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/giggs.jpg" alt="吉格斯" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">吉格斯</b>
+        <span class="pcard-meta">英国 · 左翼、进攻中场、正中场、翼锋</span>
+        <span class="pcard-line">已退役 · 威尔士足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/rooney.html" data-search="鲁尼 小坦克 小胖 韦恩·朗尼 英国 前锋、进攻中场 " data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/rooney.jpg" alt="鲁尼" loading="lazy"><span class="pcard-flag">🏳️</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">鲁尼</b>
+        <span class="pcard-meta">英国 · 前锋、进攻中场</span>
+        <span class="pcard-line">已退役 · 英格兰足球运动员</span>
+      </div>
+    </a>
+<a class="pcard" href="players/materazzi.html" data-search="马特拉齐 matrix the animal 马特拉斯 意大利 中坚 " data-group="FW">
+      <div class="pcard-photo"><img src="assets/img/materazzi.jpg" alt="马特拉齐" loading="lazy"><span class="pcard-flag">🇮🇹</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">马特拉齐</b>
+        <span class="pcard-meta">意大利 · 中坚</span>
+        <span class="pcard-line">已退役 · </span>
+      </div>
+    </a>
+<a class="pcard" href="players/zidane.html" data-search="齐达内 齐祖 齐玄宗 zizou 法国 中场 " data-group="MF">
+      <div class="pcard-photo"><img src="assets/img/zidane.jpg" alt="齐达内" loading="lazy"><span class="pcard-flag">🇫🇷</span></div>
+      <div class="pcard-body">
+        <b class="pcard-name">齐达内</b>
+        <span class="pcard-meta">法国 · 中场</span>
+        <span class="pcard-line">已退役 · 法国足球运动员、主教练</span>
+      </div>
+    </a>
+    </div>
+    <p id="empty" class="empty" hidden>没有找到匹配的球员</p>
+  </section>
+
+  <section class="panel notice">
+    <h2>关于本站</h2>
+    <p>本站仿照萌娘百科的 wiki 风格排版，为 59 位球员建立了人物页面。每位球员的资料（别名、生平经历、荣誉等）均取自维基百科并整理成中文简体，照片取自维基共享资源，未做虚构。</p>
+    <p>点击任意球员卡片即可进入 TA 的人物页面；页面内的“编辑 / 历史”标签会跳转到本站的 GitHub 仓库。</p>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>足球百科 · 收录 59 位球员的维基式百科</p>
+    <p>内容来自 <a href="https://zh.wikipedia.org" target="_blank" rel="noopener">维基百科</a> / <a href="https://www.wikidata.org" target="_blank" rel="noopener">维基数据</a>，照片来自 <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">维基共享资源</a>，采用 CC BY-SA 协议。</p>
+    <p>风格致敬 <a href="https://moegirl.icu" target="_blank" rel="noopener">萌娘百科</a> · <a href="https://github.com/IAnyii/football-wiki" target="_blank" rel="noopener">本站源码</a></p>
+  </div>
+</footer>
+<script src="assets/search.js"></script>
+</body>
+</html>

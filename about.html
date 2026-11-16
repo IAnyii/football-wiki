@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于本站 - 足球百科</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+</head>
+<body class="page-about">
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="index.html"><span class="logo-ball">⚽</span><span class="logo-text">足球百科</span><span class="logo-sub">Footballpedia</span></a>
+    <form class="search" action="all.html" method="get" onsubmit="return this.q.value.trim()!==''">
+      <input name="q" placeholder="搜索球员……" value="" autocomplete="off">
+      <button type="submit">搜索</button>
+    </form>
+    <nav class="head-nav">
+      <a href="index.html" >首页</a>
+      <a href="all.html" >全部球员</a>
+      <a href="about.html" class="on">关于本站</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="tabs"><span class="tab on">关于本站</span></div>
+  <section class="panel about">
+    <h1>关于足球百科</h1>
+    <p>这是一个仿照 <a href="https://moegirl.icu" target="_blank" rel="noopener">萌娘百科</a> 排版风格的球员百科，收录了 59 位足球运动员的人物页面。网站是纯静态页面，托管在 GitHub Pages 上。</p>
+    <h2>内容从哪里来？</h2>
+    <ul>
+      <li><b>生平经历</b>：取自中文维基百科对应条目的“生平 / 生涯”等章节，经繁简转换和排版整理；</li>
+      <li><b>别名、外号</b>：来自维基百科信息框的“昵称”字段与 Wikidata 别名；</li>
+      <li><b>照片</b>：来自维基共享资源（Wikimedia Commons，CC BY-SA 等自由协议）；</li>
+      <li><b>出生日期、国籍、位置、俱乐部</b>：来自维基百科信息框与 Wikidata 结构化数据。</li>
+    </ul>
+    <p>所有资料均整理自上述公开来源，没有编造内容；如发现错误，欢迎在 GitHub 仓库提 Issue。</p>
+    <h2>技术</h2>
+    <p>纯 HTML + CSS + 原生 JavaScript（约 0 依赖），由 Node.js 脚本从维基百科 API 抓取数据后静态生成。</p>
+    <p><a href="https://github.com/IAnyii/football-wiki" target="_blank" rel="noopener">在 GitHub 上查看本站源码 →</a></p>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>足球百科 · 收录 59 位球员的维基式百科</p>
+    <p>内容来自 <a href="https://zh.wikipedia.org" target="_blank" rel="noopener">维基百科</a> / <a href="https://www.wikidata.org" target="_blank" rel="noopener">维基数据</a>，照片来自 <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">维基共享资源</a>，采用 CC BY-SA 协议。</p>
+    <p>风格致敬 <a href="https://moegirl.icu" target="_blank" rel="noopener">萌娘百科</a> · <a href="https://github.com/IAnyii/football-wiki" target="_blank" rel="noopener">本站源码</a></p>
+  </div>
+</footer>
+</body>
+</html>
