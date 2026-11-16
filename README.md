@@ -1,6 +1,6 @@
 # ⚽ 足球百科 · Footballpedia
 
-一个仿照 [萌娘百科](https://moegirl.icu) wiki 风格排版的足球球员百科，收录 **59 位球员**（现役球星 + 传奇名宿）的人物页面，部署在 GitHub Pages：
+一个 wiki 风格排版的足球球员百科，收录 **59 位球员**（现役球星 + 传奇名宿）的人物页面，部署在 GitHub Pages：
 
 > **网站地址**：https://ianyii.github.io/football-wiki/
 
