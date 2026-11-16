@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自定义战术板 - 足球百科</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/board.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+</head>
+<body class="page-board">
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="logo" href="index.html"><span class="logo-ball">⚽</span><span class="logo-text">足球百科</span><span class="logo-sub">Footballpedia</span></a>
+    <form class="search" action="all.html" method="get" onsubmit="return this.q.value.trim()!==''">
+      <input name="q" placeholder="搜索球员……" value="" autocomplete="off">
+      <button type="submit">搜索</button>
+    </form>
+    <nav class="head-nav">
+      <a href="index.html" >首页</a>
+      <a href="all.html" >全部球员</a>
+      <a href="tactics.html" >战术动画</a>
+      <a href="board.html" class="on">战术板</a>
+      <a href="about.html" >关于本站</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+  <div class="tabs"><a class="tab" href="tactics.html">战术动画</a><span class="tab on">自定义战术板</span><span class="tab-count">拖拽 · 画线 · 导出</span></div>
+
+  <div class="board-layout">
+    <section class="panel board-main">
+      <div class="board-head">
+        <input id="board-title" class="board-title" value="我的战术板" maxlength="24" aria-label="战术板标题">
+        <span class="board-hint" id="tool-hint">拖动球员或足球；点一下球员可以改号码和名字</span>
+      </div>
+      <div class="pitch-wrap"><svg id="board" viewBox="0 0 1050 698" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自定义战术板"></svg></div>
+      <div class="board-toolbar">
+        <button class="toolbtn on" data-tool="move">✥ 拖拽</button>
+        <button class="toolbtn" data-tool="arrow">↗ 跑动箭头</button>
+        <button class="toolbtn" data-tool="pass">⇢ 传球</button>
+        <button class="toolbtn" data-tool="zone">▭ 区域</button>
+        <button class="toolbtn" data-tool="circle">◯ 圆圈</button>
+        <button class="toolbtn" data-tool="text">A 文字</button>
+        <button class="toolbtn" data-tool="erase">⌫ 擦除</button>
+      </div>
+    </section>
+
+    <aside class="board-side">
+      <div class="side-box">
+        <h3>阵型与队伍</h3>
+        <div class="bd-row"><label>红队</label><select id="form-h"><option value="4-4-2">4-4-2</option><option value="4-3-3">4-3-3</option><option value="4-2-3-1">4-2-3-1</option><option value="3-5-2">3-5-2</option><option value="5-3-2">5-3-2</option><option value="4-1-4-1">4-1-4-1</option><option value="3-4-3">3-4-3</option></select></div>
+        <div class="bd-row"><label>队名</label><input type="text" id="team-h-name" maxlength="10"></div>
+        <div class="bd-row"><label>颜色</label><input type="color" id="team-h-color"></div>
+        <div class="bd-row"><label>蓝队</label><select id="form-a"><option value="4-4-2">4-4-2</option><option value="4-3-3">4-3-3</option><option value="4-2-3-1">4-2-3-1</option><option value="3-5-2">3-5-2</option><option value="5-3-2">5-3-2</option><option value="4-1-4-1">4-1-4-1</option><option value="3-4-3">3-4-3</option></select></div>
+        <div class="bd-row"><label>队名</label><input type="text" id="team-a-name" maxlength="10"></div>
+        <div class="bd-row"><label>颜色</label><input type="color" id="team-a-color"></div>
+      </div>
+
+      <div class="side-box">
+        <h3>选中球员 <span id="p-label">未选中球员</span></h3>
+        <div class="bd-row"><label>号码</label><input type="number" id="p-num" min="0" max="99" value="" disabled></div>
+        <div class="bd-row"><label>名字</label><input type="text" id="p-name" maxlength="6" value="" disabled></div>
+        <label class="bd-check"><input type="checkbox" id="chk-names" checked> 显示球员名字</label>
+      </div>
+
+      <div class="side-box">
+        <h3>文字标注</h3>
+        <div class="bd-row"><input type="text" id="text-input" maxlength="18" placeholder="例如：二点球 / 2v1 / 回撤"></div>
+        <p class="board-hint">填好后选「A 文字」，点球场上的位置落下。</p>
+      </div>
+
+      <div class="side-box">
+        <h3>操作</h3>
+        <div class="bd-row2">
+          <button class="bd-btn" id="btn-undo" disabled>↶ 撤销</button>
+          <button class="bd-btn" id="btn-redo" disabled>↷ 重做</button>
+        </div>
+        <div class="bd-row2" style="margin-top:6px">
+          <button class="bd-btn" id="btn-clear-shapes">清空线条</button>
+          <button class="bd-btn" id="btn-reset">重置站位</button>
+        </div>
+      </div>
+
+      <div class="side-box">
+        <h3>存档 / 分享</h3>
+        <div class="bd-row"><label>存档</label><select id="slot"><option value="1">存档 1</option><option value="2">存档 2</option><option value="3">存档 3</option></select></div>
+        <div class="bd-row2"><button class="bd-btn" id="btn-save">保存</button><button class="bd-btn" id="btn-load">读取</button></div>
+        <button class="bd-btn bd-btn-full" id="btn-share">🔗 复制分享链接</button>
+        <button class="bd-btn primary bd-btn-full" id="btn-png">⬇ 导出 PNG（2 倍）</button>
+        <div class="bd-row2" style="margin-top:6px">
+          <button class="bd-btn" id="btn-json">导出 JSON</button>
+          <label class="bd-btn" style="text-align:center;cursor:pointer;margin:0">导入 JSON
+            <input type="file" id="file-json" accept=".json,application/json" style="display:none">
+          </label>
+        </div>
+        <button class="bd-btn bd-btn-full" id="btn-new">＋ 新建空板</button>
+      </div>
+
+      <div class="board-tips">
+        <b>快捷键</b>：Ctrl+Z 撤销 · Ctrl+Y 重做；触屏可以单指拖动球员。<br>
+        板子会自动存在这台浏览器里，刷新不丢；「复制分享链接」会把整块板编码进网址，发给队友即可打开同一块板。
+      </div>
+    </aside>
+  </div>
+</main>
+<div id="board-toast" class="board-toast"></div>
+<footer class="site-foot">
+  <div class="wrap">
+    <p>足球百科 · 收录 59 位球员的维基式百科</p>
+    <p><a href="https://github.com/IAnyii/football-wiki" target="_blank" rel="noopener">本站源码</a></p>
+  </div>
+</footer>
+<script src="assets/board.js"></script>
+</body>
+</html>

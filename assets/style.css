@@ -245,6 +245,9 @@ a:hover { text-decoration: underline; }
   background: #fff; border: 1px solid var(--line); color: var(--pink-deep); text-decoration: none;
 }
 .tac-entry-links a:hover { border-color: var(--pink); background: var(--pink-mist); }
+.tac-entry-cta { margin-top: 12px; font-size: 13.5px; color: var(--ink-soft); }
+.tac-entry-cta a { color: var(--pink-deep); font-weight: 600; text-decoration: none; }
+.tac-entry-cta a:hover { text-decoration: underline; }
 .about h1 { margin-top: 4px; font-size: 30px; color: var(--pink-deep); }
 .about h2 { font-size: 18px; border-left: 5px solid var(--pink); padding-left: 10px; }
 .about p, .about li { color: var(--ink-soft); }

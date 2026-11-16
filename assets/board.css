@@ -1,0 +1,93 @@
+/* ---------------- 自定义战术板 ---------------- */
+.board-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 296px;
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 1020px) {
+  .board-layout { grid-template-columns: 1fr; }
+}
+
+.board-main { padding: 14px; }
+.board-head { display: flex; align-items: center; gap: 10px; margin: 0 4px 10px; flex-wrap: wrap; }
+.board-title {
+  font: inherit; font-size: 18px; font-weight: 700; color: var(--pink-deep);
+  border: 1px solid transparent; background: transparent; border-radius: 8px;
+  padding: 4px 8px; width: 220px; max-width: 55vw;
+}
+.board-title:hover { border-color: var(--line); }
+.board-title:focus { outline: none; border-color: var(--pink); background: #fff; }
+.board-hint { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+.pitch-wrap {
+  background: #072117;
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, .45), 0 10px 30px rgba(20, 40, 30, .25);
+}
+#board { display: block; width: 100%; height: auto; border-radius: 10px; touch-action: none; }
+#board .bp { cursor: grab; }
+#board .bp-dot { stroke: #fff; stroke-width: 2.2; }
+#board .bp-num { fill: #fff; font-size: 12px; font-weight: 700; font-family: "Segoe UI", system-ui, sans-serif; }
+#board .bp-name {
+  fill: #fff; font-size: 10.5px; font-weight: 600; font-family: "Segoe UI", system-ui, sans-serif;
+  paint-order: stroke; stroke: #072117; stroke-width: 3px;
+}
+#board .bp.hi .bp-dot { stroke: #ffd166; stroke-width: 5; }
+#board .sh-text {
+  fill: #fff; font-size: 22px; font-weight: 700; font-family: "Segoe UI", system-ui, sans-serif;
+  paint-order: stroke; stroke: #072117; stroke-width: 5px;
+}
+
+.board-toolbar { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 4px 2px; }
+.toolbtn {
+  font: inherit; font-size: 13px; padding: 7px 13px; border-radius: 999px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; transition: .15s;
+}
+.toolbtn:hover { border-color: var(--pink); color: var(--pink-deep); }
+.toolbtn.on { background: var(--pink); border-color: var(--pink); color: #fff; font-weight: 600; }
+
+.board-side .side-box {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px 14px; margin-bottom: 12px;
+}
+.board-side h3 {
+  margin: 0 0 8px; font-size: 12.5px; color: var(--muted);
+  letter-spacing: .5px; font-weight: 600;
+}
+.bd-row { display: flex; align-items: center; gap: 8px; margin: 7px 0; font-size: 13px; color: var(--ink-soft); }
+.bd-row > label { min-width: 44px; flex: 0 0 auto; }
+.bd-row input[type="text"],
+.bd-row input[type="number"],
+.bd-row select {
+  font: inherit; font-size: 13px; padding: 5px 8px; border: 1px solid var(--line);
+  border-radius: 8px; min-width: 0; flex: 1; background: #fff; color: var(--ink);
+}
+.bd-row input[type="color"] {
+  padding: 2px; height: 30px; flex: 0 0 46px; border: 1px solid var(--line); border-radius: 8px; background: #fff;
+}
+.bd-row input:disabled { opacity: .5; }
+.bd-check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); margin: 6px 0; }
+.bd-btn {
+  font: inherit; font-size: 12.5px; padding: 6px 11px; border-radius: 8px;
+  border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; transition: .15s;
+}
+.bd-btn:hover { border-color: var(--pink); color: var(--pink-deep); }
+.bd-btn:disabled { opacity: .4; cursor: default; border-color: var(--line); color: var(--ink); }
+.bd-btn.primary { background: var(--pink); border-color: var(--pink); color: #fff; font-weight: 600; }
+.bd-btn.primary:hover { background: var(--pink-deep); border-color: var(--pink-deep); color: #fff; }
+.bd-btn-full { width: 100%; margin-top: 6px; }
+.bd-row2 { display: flex; gap: 6px; flex-wrap: wrap; }
+.bd-row2 .bd-btn { flex: 1; text-align: center; }
+
+.board-toast {
+  position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 18px);
+  opacity: 0; pointer-events: none; background: #34262e; color: #fff;
+  padding: 9px 18px; border-radius: 999px; font-size: 13px; transition: .25s; z-index: 99;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+}
+.board-toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+.board-tips { margin-top: 12px; font-size: 12.5px; color: var(--muted); line-height: 1.9; }
+.board-tips b { color: var(--ink-soft); }
